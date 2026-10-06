@@ -1,3 +1,0 @@
-# Quellen
-
-## Verwendete Assets
