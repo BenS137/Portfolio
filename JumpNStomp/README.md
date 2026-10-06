@@ -69,10 +69,6 @@ Die Entwicklung erfolgte mit **Git**. Dabei habe ich mit Branches gearbeitet, Ä
 - Shader
 - Partikelsysteme
 
-## Screenshots
-
-*Screenshots und Gameplay-Aufnahmen folgen.*
-
 ## Projektkontext
 
 **Projektart:** Hochschulprojekt  
