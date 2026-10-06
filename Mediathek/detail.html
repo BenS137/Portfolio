@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="color-scheme" content="dark light">
+
+    <meta
+        name="theme-color"
+        id="theme-color"
+        content="#101014"
+    >
+
+    <title>Projektdetails | HdM-Mediathek</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body data-page="detail">
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            HdM<span>Mediathek</span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Hauptnavigation">
+            <a href="index.html">Startseite</a>
+            <a href="search.html">Suche</a>
+        </nav>
+
+        <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Zwischen hellem und dunklem Design wechseln"
+        >
+            Darkmode
+        </button>
+    </header>
+
+    <main class="detail-page">
+        <section class="detail-hero" id="detail-hero">
+            <div class="detail-hero-content">
+                <p class="eyebrow" id="detail-category">
+                    HdM-Projekt
+                </p>
+
+                <h1 id="detail-title">
+                    Projekt wird geladen …
+                </h1>
+
+                <p class="detail-description" id="detail-description">
+                    Die Projektinformationen werden aus der Mediathek geladen.
+                </p>
+
+                <div class="detail-actions">
+                    <button
+                        class="button button-primary"
+                        id="watch-button"
+                        type="button"
+                    >
+                         abspielen
+                    </button>
+
+                   <button
+                        class="button button-secondary"
+                        id="watchlist-button"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Zur Merkliste
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-information">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Projekt</p>
+                    <h2>Über das Projekt</h2>
+                </div>
+            </div>
+
+            <p id="project-description">
+                Die Projektbeschreibung wird geladen …
+            </p>
+        </section>
+
+        <section class="video-section" id="video-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Video</p>
+                    <h2>Projekt ansehen</h2>
+                </div>
+            </div>
+
+            <video
+                id="project-video"
+                class="project-video"
+                controls
+                preload="metadata"
+            >
+                Ihr Browser unterstützt das Videoelement nicht.
+            </video>
+
+            <p class="video-message" id="video-message">
+                Video wird geladen …
+            </p>
+        </section>
+
+        <section class="project-information">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Informationen</p>
+                    <h2>Über das Projekt</h2>
+                </div>
+            </div>
+
+          <dl class="information-grid">
+                <div class="information-item">
+                    <dt>Semester</dt>
+                    <dd id="information-semester">–</dd>
+                </div>
+
+                <div class="information-item">
+                    <dt>Betreuung</dt>
+                    <dd id="information-supervisor">–</dd>
+                </div>
+
+                <div class="information-item">
+                    <dt>Studiengänge</dt>
+                    <dd id="information-courses">–</dd>
+                </div>
+
+                <div class="information-item">
+                    <dt>Software</dt>
+                    <dd id="information-software">–</dd>
+                    
+                </div>
+                </dl>
+            <div class="detail-text-section">
+                    <h3>Team</h3>
+                    <p id="information-team">–</p>
+            </div>
+
+            <div class="detail-text-section">
+                <h3>Weblinks</h3>
+                <div id="information-links">
+                    <p>Keine Weblinks vorhanden.</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="copyright-year">2026</span> Neue HdM-Mediathek</p>
+
+        <a
+            href="https://hdm-stuttgart.de/mediathek"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Originale HdM-Mediathek
+        </a>
+    </footer>
+</body>
+</html>

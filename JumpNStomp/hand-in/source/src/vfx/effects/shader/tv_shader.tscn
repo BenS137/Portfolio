@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://tggmx48ufxpa"]
+
+[ext_resource type="Shader" uid="uid://cysjbdq2wet3b" path="res://src/vfx/effects/shader/tv_shader.gdshader" id="1_0tkjb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqtkg"]
+shader = ExtResource("1_0tkjb")
+shader_parameter/lower_definition_on = true
+shader_parameter/glow_on = true
+shader_parameter/scanlines_on = true
+shader_parameter/vignette_on = true
+shader_parameter/pixel_size = 1.0
+shader_parameter/line_count = 1200.0
+shader_parameter/line_speed = 0.2
+shader_parameter/darkest_line = 0.9
+shader_parameter/brightest_line = 1.0
+shader_parameter/glow_size = 2.0
+shader_parameter/glow_strength = 0.2
+shader_parameter/vignette_strength = 0.25
+shader_parameter/vignette_size = 0.85
+
+[node name="TvShader" type="CanvasLayer" unique_id=588692575]
+
+[node name="vfx" type="ColorRect" parent="." unique_id=1873535864]
+material = SubResource("ShaderMaterial_hqtkg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

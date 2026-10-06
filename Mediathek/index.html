@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="dark light">
+
+    <meta
+        name="theme-color"
+        id="theme-color"
+        content="#101014"
+    >
+    <title>HdM-Mediathek</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body data-page="home">
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            HdM<span>Mediathek</span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Hauptnavigation">
+            <a class="active" href="index.html">Startseite</a>
+            <a href="search.html">Suche</a>
+        </nav>
+
+        <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            aria-label="Zwischen hellem und dunklem Design wechseln"
+        >
+            Lightmode
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+
+            <div class="hero-content">
+                
+                <h1 id="hero-title">Projekt wird geladen …</h1>
+
+                <p class="hero-description" id="hero-description">
+                    Die Projektdaten werden aus der HdM-Mediathek geladen.
+                </p>
+
+                <a class="button button-primary" id="hero-link" href="#">
+                    Projekt ansehen
+                </a>
+            </div>
+        </section>
+
+        <section class="project-section" id="watchlist-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Gespeichert</p>
+                    <h2>Meine Merkliste</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="watchlist-projects"
+                aria-live="polite"
+            >
+                <p class="empty-message">
+                    Du hast noch keine Projekte gespeichert.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Neu veröffentlicht</p>
+                    <h2>Neu in der Mediathek</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="latest-projects"
+                aria-live="polite"
+            >
+                <p class="loading-message">Projekte werden geladen …</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Kategorie</p>
+                    <h2>Film</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="film-projects"
+                aria-live="polite"
+            >
+                <p class="loading-message">Filmprojekte werden geladen …</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Kategorie</p>
+                    <h2>Games</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="game-projects"
+                aria-live="polite"
+            >
+                <p class="loading-message">Game-Projekte werden geladen …</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Kategorie</p>
+                    <h2>TV</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="tv-projects"
+                aria-live="polite"
+            >
+                <p class="loading-message">TV-Projekte werden geladen …</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Kategorie</p>
+                    <h2>Computeranimation</h2>
+                </div>
+            </div>
+
+            <div
+                class="project-row"
+                id="animation-projects"
+                aria-live="polite"
+            >
+                <p class="loading-message">
+                    Computeranimationsprojekte werden geladen …
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="copyright-year">2026</span> Neue HdM-Mediathek</p>
+
+        <a
+            href="https://hdm-stuttgart.de/mediathek"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Originale HdM-Mediathek
+        </a>
+    </footer>
+</body>
+</html>

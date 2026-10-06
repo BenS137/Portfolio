@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://dsp4wf6u63muj"]
+
+[ext_resource type="PackedScene" uid="uid://di8epg3rubk1a" path="res://src/worlds/objects/score_board.tscn" id="1_bjhlt"]
+[ext_resource type="Script" uid="uid://b6ku8k0ka1dhg" path="res://src/worlds/maps/stage.gd" id="1_pldng"]
+[ext_resource type="Texture2D" uid="uid://m68ddfxbr4ng" path="res://src/assets/enviroments/backgrounds/boring_sky-export.png" id="2_1a02f"]
+[ext_resource type="PackedScene" uid="uid://dqdk1pky7nm6c" path="res://src/players/player.tscn" id="2_pldng"]
+[ext_resource type="PackedScene" uid="uid://cwwhfvvfdy6cl" path="res://src/props/platform.tscn" id="3_2f25b"]
+[ext_resource type="PackedScene" uid="uid://b8ypeupiebudh" path="res://src/worlds/objects/spawn_area.tscn" id="4_lugjv"]
+[ext_resource type="PackedScene" uid="uid://gjrt161236qi" path="res://src/worlds/objects/play_area.tscn" id="5_tlp43"]
+[ext_resource type="PackedScene" uid="uid://tggmx48ufxpa" path="res://src/vfx/effects/shader/tv_shader.tscn" id="6_82a5d"]
+[ext_resource type="PackedScene" uid="uid://d1dh3oip5xvtr" path="res://src/worlds/objects/object_bounds.tscn" id="8_2f25b"]
+[ext_resource type="PackedScene" uid="uid://bdh2xdricno1w" path="res://src/worlds/objects/physics_objects/pushable_box.tscn" id="9_lugjv"]
+[ext_resource type="Script" uid="uid://dw3xxajwwgvd4" path="res://src/GameStartCountdown.gd" id="11_5whac"]
+[ext_resource type="FontFile" uid="uid://bhj1c76d0vicj" path="res://src/assets/font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="12_1a02f"]
+[ext_resource type="Texture2D" uid="uid://c2tkhj3ky7ufm" path="res://src/assets/enviroments/floors/flower_floor_red/boring_flower_floor-export.png" id="13_1a02f"]
+
+[node name="WorldWrapTestFlat" type="Node2D" unique_id=412643740]
+script = ExtResource("1_pldng")
+
+[node name="SkyTexture" type="TextureRect" parent="." unique_id=481865783]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1a02f")
+metadata/_edit_lock_ = true
+
+[node name="Player1" parent="." unique_id=767665893 instance=ExtResource("2_pldng")]
+position = Vector2(300, 823)
+
+[node name="Player2" parent="." unique_id=889234951 instance=ExtResource("2_pldng")]
+position = Vector2(1621, 799)
+
+[node name="ControlComponent" parent="Player2/Components" parent_id_path=PackedInt32Array(889234951, 1615955496) index="1" unique_id=1163150322]
+left_action = "LeftPlayer2"
+right_action = "RightPlayer2"
+jump_action = "JumpPlayer2"
+stomp_action = "StompPlayer2"
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1126419660]
+metadata/_edit_lock_ = true
+
+[node name="Ceiling" parent="Platforms" unique_id=463513494 instance=ExtResource("3_2f25b")]
+position = Vector2(949, 2)
+collision_layer = 15
+collision_mask = 15
+platform_size = Vector2(2100, 60)
+metadata/_edit_lock_ = true
+
+[node name="Floor" parent="Platforms" unique_id=571179154 instance=ExtResource("3_2f25b")]
+position = Vector2(938, 978)
+collision_layer = 15
+collision_mask = 15
+platform_size = Vector2(4200, 60)
+
+[node name="Platform" parent="Platforms" unique_id=979873916 instance=ExtResource("3_2f25b")]
+position = Vector2(523, -136)
+
+[node name="SpawnAreas" type="Node2D" parent="." unique_id=1551564542]
+
+[node name="SpawnAreaLeft" parent="SpawnAreas" unique_id=768513554 instance=ExtResource("4_lugjv")]
+position = Vector2(333, 800)
+collision_layer = 7
+collision_mask = 7
+
+[node name="SpawnAreaRight" parent="SpawnAreas" unique_id=1717287200 instance=ExtResource("4_lugjv")]
+position = Vector2(1636, 803)
+collision_layer = 7
+collision_mask = 7
+
+[node name="SpawnAreaMiddle" parent="SpawnAreas" unique_id=1552751140 instance=ExtResource("4_lugjv")]
+position = Vector2(996, 803)
+collision_layer = 7
+collision_mask = 7
+
+[node name="PlayArea" parent="." unique_id=2094614624 instance=ExtResource("5_tlp43")]
+visible = false
+position = Vector2(56, 144)
+collision_mask = 3
+
+[node name="ObjectBounds" parent="." unique_id=313687939 instance=ExtResource("8_2f25b")]
+metadata/_edit_lock_ = true
+
+[node name="WoodenBoxes" type="Node2D" parent="." unique_id=886516759]
+
+[node name="WoodenPushableBox" parent="WoodenBoxes" unique_id=1610356905 instance=ExtResource("9_lugjv")]
+position = Vector2(968, 283)
+
+[node name="WoodenPushableBox2" parent="WoodenBoxes" unique_id=56746433 instance=ExtResource("9_lugjv")]
+position = Vector2(966, 953)
+
+[node name="WoodenPushableBox3" parent="WoodenBoxes" unique_id=1127229775 instance=ExtResource("9_lugjv")]
+position = Vector2(968, 434)
+
+[node name="WoodenPushableBox4" parent="WoodenBoxes" unique_id=1182209764 instance=ExtResource("9_lugjv")]
+position = Vector2(968, 608)
+
+[node name="WoodenPushableBox5" parent="WoodenBoxes" unique_id=779454684 instance=ExtResource("9_lugjv")]
+position = Vector2(968, 822)
+
+[node name="TvShader" parent="." unique_id=2022992783 instance=ExtResource("6_82a5d")]
+
+[node name="ScoreBoard" parent="." unique_id=1269547233 instance=ExtResource("1_bjhlt")]
+offset_left = 0.0
+offset_right = 1920.0
+offset_bottom = 250.0
+
+[node name="GameStartCountdown" type="Node" parent="." unique_id=1300336610]
+script = ExtResource("11_5whac")
+
+[node name="CountdownLabel" type="Label" parent="GameStartCountdown" unique_id=1044793053]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.22745098, 0.14901961, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("12_1a02f")
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BoringFlowerFloorExport" type="Sprite2D" parent="GameStartCountdown" unique_id=1073820126]
+position = Vector2(961.5001, 548.99994)
+scale = Vector2(5.9968743, 6.0333333)
+texture = ExtResource("13_1a02f")
+
+[editable path="Player1"]
+[editable path="Player2"]

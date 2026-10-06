@@ -1,0 +1,61 @@
+Informatik 2
+
+Was macht `\d` in einem Regex?
+Findet eine Ziffer (0-9)
+Findet einen Buchstaben
+Findet ein Leerzeichen
+Findet ein Sonderzeichen
+
+Was bedeutet `.` in einem Regex?
+Beliebiges einzelnes Zeichen
+Eine Punktzahl
+Nur Buchstaben
+Nur Zahlen
+
+Wofür werden Exceptions in Python verwendet?
+Um Fehler während der Programmausführung abzufangen
+Um Textdateien zu lesen
+Um Variablen zu speichern
+Um Schleifen zu erstellen
+
+Welche Anweisung fängt einen Fehler ab?
+try
+if
+for
+de
+
+Welche Anweisung wird ausgeführt, wenn im `try`-Block ein Fehler auftritt?
+except
+finally
+raise
+pass
+
+Was beschreibt die Zeitkomplexität eines Algorithmus?
+Wie schnell er in Abhängigkeit von der Eingabegröße läuft
+Wie viel Speicher er benötigt
+Wie viele Variablen er hat
+Wie viele Funktionen er enthält
+
+Was bedeutet „O(n)“ bei einem Algorithmus?
+Die Laufzeit wächst linear mit der Eingabegröße
+Die Laufzeit ist konstant
+Die Laufzeit wächst quadratisch
+Die Laufzeit wächst exponentiell
+
+Was ist eine Klasse in Python?
+Ein Bauplan für Objekte
+Ein einzelnes Objekt
+Eine Funktion
+Eine Variable
+
+Wie nennt man ein einzelnes Exemplar einer Klasse?
+Objekt
+Methode
+Attribut
+Modul
+
+Wie definiert man eine Methode innerhalb einer Klasse?
+def
+class
+import
+return

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="dark light">
+
+    <meta
+        name="theme-color"
+        id="theme-color"
+        content="#101014"
+    >
+
+    <title>Suche | HdM-Mediathek</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body data-page="search">
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            HdM<span>Mediathek</span>
+        </a>
+
+        <nav class="main-navigation" aria-label="Hauptnavigation">
+            <a href="index.html">Startseite</a>
+            <a class="active" href="search.html">Suche</a>
+        </nav>
+
+        <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Zwischen hellem und dunklem Design wechseln"
+        >
+            Darkmode
+        </button>
+    </header>
+
+    <main class="search-page">
+        <section class="search-introduction">
+            <p class="eyebrow">HdM-Projekte entdecken</p>
+            <h1>Suche</h1>
+
+            <p>
+                Durchsuche die Mediathek nach Titeln, Beschreibungen
+                und beteiligten Personen.
+            </p>
+
+            <form class="search-form" id="search-form">
+                <label class="visually-hidden" for="search-input">
+                    Suchbegriff
+                </label>
+
+                <input
+                    id="search-input"
+                    name="suchtext"
+                    type="search"
+                    placeholder="Projekt, Person oder Thema suchen …"
+                    autocomplete="off"
+                    required
+                >
+
+                <button class="button button-primary" type="submit">
+                    Suchen
+                </button>
+            </form>
+        </section>
+
+        <section class="search-results-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Ergebnisse</p>
+                    <h2 id="search-heading">Noch keine Suche durchgeführt</h2>
+                </div>
+
+                <p id="result-count"></p>
+            </div>
+
+            <div
+                class="search-results"
+                id="search-results"
+                aria-live="polite"
+            >
+                <p class="empty-message">
+                    Gib oben einen Suchbegriff ein.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="copyright-year">2026</span> Neue HdM-Mediathek</p>
+
+        <a
+            href="https://hdm-stuttgart.de/mediathek"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Originale HdM-Mediathek
+        </a>
+    </footer>
+</body>
+</html>

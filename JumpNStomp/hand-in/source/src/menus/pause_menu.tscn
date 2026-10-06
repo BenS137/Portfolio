@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c1o4w3aymi2nu"]
+
+[ext_resource type="Script" uid="uid://drccjpt2ul2y2" path="res://src/menus/pause_menu.gd" id="1_k1cxs"]
+[ext_resource type="PackedScene" uid="uid://tggmx48ufxpa" path="res://src/vfx/effects/shader/tv_shader.tscn" id="2_i70bi"]
+[ext_resource type="FontFile" uid="uid://c1vnx5mxxah66" path="res://src/assets/font/Micro_5,Tiny5/Micro_5/Micro5-Regular.ttf" id="2_w3dcc"]
+
+[node name="PauseMenu" type="Control" unique_id=56207494]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1cxs")
+
+[node name="Panel" type="Panel" parent="." unique_id=1168449401]
+self_modulate = Color(1.0046368, 1.0413129, 0.4259677, 0.23529412)
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=2114454214]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 382.0
+offset_right = 1458.0
+offset_bottom = 682.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer" unique_id=1250983616]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Panel/CenterContainer/VBoxContainer" unique_id=1388491431]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3dcc")
+theme_override_font_sizes/font_size = 51
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="Panel/CenterContainer/VBoxContainer" unique_id=23384579]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3dcc")
+theme_override_font_sizes/font_size = 51
+text = "Quit"
+
+[node name="TvShader" parent="." unique_id=2022992783 instance=ExtResource("2_i70bi")]

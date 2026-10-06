@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://b8153n376wwpm"]
+
+[ext_resource type="Script" uid="uid://bl6cbfjdl30q8" path="res://hand-in/source/src/menus/interactive menus/lobby.gd" id="1_gj5xx"]
+[ext_resource type="Texture2D" uid="uid://m68ddfxbr4ng" path="res://hand-in/source/src/assets/enviroments/backgrounds/boring_sky-export.png" id="2_2q7am"]
+[ext_resource type="Texture2D" uid="uid://bdh5vhlmij6lf" path="res://hand-in/source/src/assets/menu/interactive_menu/Sprenkoepfe_logo.png" id="3_xjusb"]
+[ext_resource type="PackedScene" uid="uid://dqdk1pky7nm6c" path="res://hand-in/source/src/players/player.tscn" id="4_0ie81"]
+[ext_resource type="PackedScene" uid="uid://cwwhfvvfdy6cl" path="res://hand-in/source/src/props/platform.tscn" id="5_knau3"]
+[ext_resource type="Texture2D" uid="uid://doduqe1nsprwm" path="res://hand-in/source/src/assets/enviroments/floors/flower_floor_red/boring_flower_floor_no_green_outline-export.png" id="6_ek1ie"]
+[ext_resource type="PackedScene" uid="uid://tggmx48ufxpa" path="res://hand-in/source/src/vfx/effects/shader/tv_shader.tscn" id="7_cdefl"]
+[ext_resource type="PackedScene" uid="uid://d1dh3oip5xvtr" path="res://hand-in/source/src/worlds/objects/object_bounds.tscn" id="8_1d4uw"]
+[ext_resource type="PackedScene" uid="uid://dkew6k0b71v2b" path="res://hand-in/source/src/worlds/objects/physics_objects/big_wooden_pushable_box.tscn" id="10_th7um"]
+[ext_resource type="PackedScene" uid="uid://bjb7e4qv0xwoi" path="res://hand-in/source/src/menus/interactive menus/character_box.tscn" id="11_0ie81"]
+[ext_resource type="PackedScene" uid="uid://b8ypeupiebudh" path="res://hand-in/source/src/worlds/objects/spawn_area.tscn" id="11_gj5xx"]
+[ext_resource type="Script" uid="uid://cgcivr2or786c" path="res://hand-in/source/src/worlds/objects/physics_objects/start_box.gd" id="11_j37yg"]
+[ext_resource type="PackedScene" uid="uid://gjrt161236qi" path="res://hand-in/source/src/worlds/objects/play_area.tscn" id="12_2q7am"]
+[ext_resource type="PackedScene" uid="uid://b5ya0oqdheyxk" path="res://hand-in/source/src/menus/interactive menus/map_box.tscn" id="12_knau3"]
+[ext_resource type="PackedScene" uid="uid://cj3j764stpjtw" path="res://hand-in/source/src/menus/interactive menus/timer_box.tscn" id="13_1d4uw"]
+[ext_resource type="Texture2D" uid="uid://dqjeeqo5mo3wq" path="res://hand-in/source/src/assets/enviroments/objects/boxes/big/bix_box_new_screws.png" id="14_su2gf"]
+[ext_resource type="Script" uid="uid://dn3igxiuy7f46" path="res://hand-in/source/src/menus/interactive menus/timer_box.gd" id="14_th7um"]
+[ext_resource type="Shader" uid="uid://cg8jmto1a4q1t" path="res://hand-in/source/src/worlds/objects/physics_objects/pixelfy.gdshader" id="15_th7um"]
+[ext_resource type="FontFile" uid="uid://cs6wcw8l1qk0n" path="res://hand-in/docs/Tiny5/Tiny5-Regular.ttf" id="16_j37yg"]
+[ext_resource type="Script" uid="uid://bjh4eclsemusv" path="res://hand-in/source/src/menus/interactive menus/leave_box.gd" id="18_th7um"]
+[ext_resource type="FontFile" uid="uid://bi3mvaawp153q" path="res://hand-in/source/src/menus/Micro5-Regular.ttf" id="21_j37yg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cy46g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy46g"]
+size = Vector2(128, 96)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hrpk"]
+shader = ExtResource("15_th7um")
+shader_parameter/lower_definition_on = true
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="Gradient" id="Gradient_g6sxd"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.22745098, 0.14901961, 0.21960784, 1, 0.6745098, 0.5137255, 0.34509805, 1, 0.79607844, 0.61960787, 0.4392157, 1, 0.93333334, 0.78431374, 0.56078434, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hrpk"]
+gradient = SubResource("Gradient_g6sxd")
+width = 4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cy46g"]
+lifetime_randomness = 1.0
+particle_flag_rotate_y = true
+angle_min = -179.99998
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 42.129997
+initial_velocity_max = 246.59999
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -50.9
+radial_accel_max = -2.2351742e-06
+scale_min = 4.44
+scale_max = 35.36
+color = Color(0.93333334, 0.78431374, 0.56078434, 1)
+color_ramp = SubResource("GradientTexture1D_3hrpk")
+
+[node name="Lobby" type="Node2D" unique_id=137389923]
+script = ExtResource("1_gj5xx")
+
+[node name="Background" type="Node2D" parent="." unique_id=612107136]
+
+[node name="SkyTexture" type="TextureRect" parent="Background" unique_id=1385351902]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2q7am")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1530470460]
+offset_right = 984.0
+offset_bottom = 616.0
+texture = ExtResource("3_xjusb")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Player" parent="." unique_id=767665893 instance=ExtResource("4_0ie81")]
+position = Vector2(88, 664)
+
+[node name="Player2" parent="." unique_id=1243265334 instance=ExtResource("4_0ie81")]
+position = Vector2(1832, 639)
+
+[node name="Ground" type="Node2D" parent="." unique_id=787628534]
+
+[node name="Platform" parent="Ground" unique_id=463513494 instance=ExtResource("5_knau3")]
+position = Vector2(944, 967)
+platform_size = Vector2(2000, 60)
+metadata/_edit_lock_ = true
+
+[node name="GroundTexture" type="TextureRect" parent="Ground" unique_id=1207157895]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ek1ie")
+metadata/_edit_lock_ = true
+
+[node name="TvShader" parent="." unique_id=588692575 instance=ExtResource("7_cdefl")]
+
+[node name="ObjectBounds" parent="." unique_id=313687939 instance=ExtResource("8_1d4uw")]
+metadata/_edit_lock_ = true
+
+[node name="MenuBoxes" type="Node" parent="." unique_id=332899354]
+
+[node name="Start" parent="MenuBoxes" unique_id=1109495780 instance=ExtResource("10_th7um")]
+position = Vector2(434, 825)
+script = ExtResource("11_j37yg")
+
+[node name="RichTextLabel" parent="MenuBoxes/Start" index="3" unique_id=1127095468]
+text = "START"
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBox" parent="MenuBoxes" unique_id=218875768 instance=ExtResource("11_0ie81")]
+position = Vector2(697, 825)
+
+[node name="MapBox" parent="MenuBoxes" unique_id=2060542281 instance=ExtResource("12_knau3")]
+position = Vector2(961, 825)
+
+[node name="TimerBox" parent="MenuBoxes" unique_id=878952734 instance=ExtResource("13_1d4uw")]
+position = Vector2(1225, 823)
+script = ExtResource("14_th7um")
+
+[node name="LeaveBox" type="RigidBody2D" parent="MenuBoxes" unique_id=1610356905]
+position = Vector2(1753, 823)
+collision_layer = 5
+collision_mask = 15
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_cy46g")
+linear_damp = 3.0
+angular_damp = 10.0
+script = ExtResource("18_th7um")
+
+[node name="BoxTexture" type="Sprite2D" parent="MenuBoxes/LeaveBox" unique_id=670261400]
+position = Vector2(-260, -11)
+scale = Vector2(4, 4)
+texture = ExtResource("14_su2gf")
+
+[node name="BoxCollision" type="CollisionShape2D" parent="MenuBoxes/LeaveBox" unique_id=1284583610]
+position = Vector2(-260, -11)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_cy46g")
+
+[node name="BoxVfx" type="GPUParticles2D" parent="MenuBoxes/LeaveBox" unique_id=1476967847]
+material = SubResource("ShaderMaterial_3hrpk")
+position = Vector2(-259, 0)
+emitting = false
+amount = 200
+lifetime = 0.6
+interp_to_end = 0.37
+explosiveness = 1.0
+randomness = 0.75
+process_material = SubResource("ParticleProcessMaterial_cy46g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuBoxes/LeaveBox" unique_id=1904117889]
+offset_left = -388.0
+offset_top = -107.0
+offset_right = -132.0
+offset_bottom = 85.0
+theme_override_colors/default_color = Color(0.22745098, 0.14901961, 0.21960784, 1)
+theme_override_fonts/normal_font = ExtResource("16_j37yg")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "LEAVE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnAreas" type="Node2D" parent="." unique_id=1025697046]
+
+[node name="SpawnAreaLeft" parent="SpawnAreas" unique_id=768513554 instance=ExtResource("11_gj5xx")]
+position = Vector2(356, 121)
+collision_layer = 7
+collision_mask = 7
+
+[node name="SpawnAreaRight" parent="SpawnAreas" unique_id=533365845 instance=ExtResource("11_gj5xx")]
+position = Vector2(1621, 113)
+collision_layer = 7
+collision_mask = 7
+
+[node name="SpawnAreaMiddle" parent="SpawnAreas" unique_id=359345943 instance=ExtResource("11_gj5xx")]
+position = Vector2(968, 121)
+collision_layer = 7
+collision_mask = 7
+
+[node name="PlayArea" parent="." unique_id=2094614624 instance=ExtResource("12_2q7am")]
+visible = false
+
+[node name="Label" type="Label" parent="." unique_id=1109444598]
+offset_left = 5.0
+offset_top = 996.0
+offset_right = 1921.0
+offset_bottom = 1076.0
+theme_override_colors/font_color = Color(0.22745098, 0.14901961, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("21_j37yg")
+theme_override_font_sizes/font_size = 51
+text = "© 2026 Alexander Zoller, Benjamín Syll, Esas Anifauw, Leon Mai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="MenuBoxes/Start"]

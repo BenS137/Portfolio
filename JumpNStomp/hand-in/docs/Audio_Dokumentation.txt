@@ -1,0 +1,41 @@
+Audio Dokumentation
+Leon Mai
+
+# Rechte und Nutzung
+
+Alle von mir erstellten Soundeffekte und Musikstücke wurden eigenständig produziert und bearbeitet.
+
+Ich besitze die Rechte an den selbst erstellten Audio-Inhalten und habe diese für die Verwendung im Projekt erstellt.
+
+
+Die erstellten Audio-Dateien dürfen im Rahmen dieses Projekts verwendet und präsentiert werden.
+
+
+DAW, mit der ich gearbeitet habe:
+- Ableton
+
+
+Alle Soundeffekte wurden von mir per Foleytechnik erstellt und in Ableton bearbeitet.
+
+Implementierte Soundeffekte:
+
+- Jump-Sounds
+- Hit-Sounds
+- Explosionen
+- Countdown-Sound
+- Auswahl- und Klick-Sounds
+- Glide-Sound
+- Stomp-Sound
+- Footstep-Sounds
+- Duck-Sound
+
+Alle Soundtracks wurden von mir erstellt.
+Für die Produktion habe ich unter anderem verwendet:
+
+- Drum-One-Shot-Samples aus Ableton
+- Analog Lab V für Synthesizer-Klänge und Melodien (Keine Loops)
+
+Implementierte Soundtracks:
+
+- fighting_theme
+- main_theme

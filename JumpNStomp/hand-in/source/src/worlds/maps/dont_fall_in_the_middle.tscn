@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://ddfig7bma3k32"]
+
+[ext_resource type="Script" uid="uid://b6ku8k0ka1dhg" path="res://src/worlds/maps/stage.gd" id="1_4yq8s"]
+[ext_resource type="PackedScene" uid="uid://tggmx48ufxpa" path="res://src/vfx/effects/shader/tv_shader.tscn" id="1_11fvo"]
+[ext_resource type="PackedScene" uid="uid://di8epg3rubk1a" path="res://src/worlds/objects/score_board.tscn" id="2_4yq8s"]
+[ext_resource type="Texture2D" uid="uid://m68ddfxbr4ng" path="res://src/assets/enviroments/backgrounds/boring_sky-export.png" id="2_flnx1"]
+[ext_resource type="PackedScene" uid="uid://dqdk1pky7nm6c" path="res://src/players/player.tscn" id="3_dir3q"]
+[ext_resource type="PackedScene" uid="uid://cwwhfvvfdy6cl" path="res://src/props/platform.tscn" id="4_3br3t"]
+[ext_resource type="PackedScene" uid="uid://b8ypeupiebudh" path="res://src/worlds/objects/spawn_area.tscn" id="5_w13p2"]
+[ext_resource type="PackedScene" uid="uid://gjrt161236qi" path="res://src/worlds/objects/play_area.tscn" id="6_mo58k"]
+[ext_resource type="PackedScene" uid="uid://d1dh3oip5xvtr" path="res://src/worlds/objects/object_bounds.tscn" id="8_dir3q"]
+[ext_resource type="Script" uid="uid://dw3xxajwwgvd4" path="res://src/GameStartCountdown.gd" id="9_3br3t"]
+[ext_resource type="FontFile" uid="uid://bhj1c76d0vicj" path="res://src/assets/font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="10_w13p2"]
+[ext_resource type="Texture2D" uid="uid://f3uxuxpa5n57" path="res://src/assets/enviroments/floors/flower_floor_red/boring_flower_floor-no_middle.png" id="11_mo58k"]
+
+[node name="WorldWrapTestFlat" type="Node2D" unique_id=412643740]
+script = ExtResource("1_4yq8s")
+
+[node name="SkyTexture" type="TextureRect" parent="." unique_id=721963062]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_flnx1")
+metadata/_edit_lock_ = true
+
+[node name="Player1" parent="." unique_id=767665893 instance=ExtResource("3_dir3q")]
+position = Vector2(300, 823)
+
+[node name="Player2" parent="." unique_id=889234951 instance=ExtResource("3_dir3q")]
+position = Vector2(1621, 799)
+
+[node name="ControlComponent" parent="Player2/Components" parent_id_path=PackedInt32Array(889234951, 1615955496) index="1" unique_id=1163150322]
+left_action = "LeftPlayer2"
+right_action = "RightPlayer2"
+jump_action = "JumpPlayer2"
+stomp_action = "StompPlayer2"
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1126419660]
+
+[node name="Left" parent="Platforms" unique_id=463513494 instance=ExtResource("4_3br3t")]
+visibility_layer = 0
+position = Vector2(299, 972)
+platform_size = Vector2(800, 80)
+
+[node name="Floor" parent="Platforms" unique_id=571179154 instance=ExtResource("4_3br3t")]
+position = Vector2(968, 4)
+platform_size = Vector2(4200, 60)
+
+[node name="right" parent="Platforms" unique_id=155003039 instance=ExtResource("4_3br3t")]
+visibility_layer = 0
+position = Vector2(1623, 972)
+platform_size = Vector2(800, 80)
+
+[node name="SpawnAreas" type="Node2D" parent="." unique_id=1551564542]
+
+[node name="SpawnAreaLeft" parent="SpawnAreas" unique_id=768513554 instance=ExtResource("5_w13p2")]
+position = Vector2(296, 776)
+collision_layer = 7
+collision_mask = 7
+
+[node name="SpawnAreaRight" parent="SpawnAreas" unique_id=1717287200 instance=ExtResource("5_w13p2")]
+position = Vector2(1627, 792)
+collision_layer = 7
+collision_mask = 7
+
+[node name="PlayArea" parent="." unique_id=2094614624 instance=ExtResource("6_mo58k")]
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="TvShader" parent="." unique_id=2022992783 instance=ExtResource("1_11fvo")]
+
+[node name="ObjectBounds" parent="." unique_id=313687939 instance=ExtResource("8_dir3q")]
+
+[node name="GameStartCountdown" type="Node" parent="." unique_id=1529660122]
+script = ExtResource("9_3br3t")
+
+[node name="CountdownLabel" type="Label" parent="GameStartCountdown" unique_id=1768945463]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.22745098, 0.14901961, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("10_w13p2")
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ScoreBoard" parent="." unique_id=1269547233 instance=ExtResource("2_4yq8s")]
+offset_left = -0.5
+offset_top = 34.0
+offset_right = 1936.0
+offset_bottom = 152.0
+
+[node name="BoringFlowerFloorNoMiddle" type="Sprite2D" parent="." unique_id=1667896579]
+position = Vector2(960.5, 535)
+scale = Vector2(5.990625, 6.1)
+texture = ExtResource("11_mo58k")
+
+[editable path="Player1"]
+[editable path="Player2"]

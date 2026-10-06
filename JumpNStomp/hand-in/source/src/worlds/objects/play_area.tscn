@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gjrt161236qi"]
+
+[ext_resource type="Script" uid="uid://b31txe4ql7fs3" path="res://src/worlds/objects/play_area.gd" id="1_gbdf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1wx8"]
+size = Vector2(2831, 1602)
+
+[node name="PlayArea" type="Area2D" unique_id=2094614624]
+script = ExtResource("1_gbdf2")
+
+[node name="AreaSensor" type="CollisionShape2D" parent="." unique_id=405673398]
+position = Vector2(1066, 493)
+shape = SubResource("RectangleShape2D_e1wx8")
+debug_color = Color(0.84880775, 0.41171598, 0.44640195, 0.18431373)
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

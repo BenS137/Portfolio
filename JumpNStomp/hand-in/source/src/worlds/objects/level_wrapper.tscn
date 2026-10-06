@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0chh1mfiynd7"]
+
+[ext_resource type="Script" uid="uid://dk7kwdumm2oih" path="res://src/worlds/objects/level_wrapper.gd" id="1_fgejn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qadqf"]
+size = Vector2(1920, 1080)
+
+[node name="LevelWrapper" type="Area2D" unique_id=1758907884]
+script = ExtResource("1_fgejn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1509700862]
+position = Vector2(960, 540)
+shape = SubResource("RectangleShape2D_qadqf")
+metadata/_edit_lock_ = true
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

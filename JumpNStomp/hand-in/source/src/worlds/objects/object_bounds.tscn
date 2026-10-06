@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1dh3oip5xvtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57hjj"]
+size = Vector2(32, 1600.75)
+
+[node name="ObjectBounds" type="Node2D" unique_id=313687939]
+
+[node name="LeftObjectBound" type="StaticBody2D" parent="." unique_id=572123836]
+collision_layer = 4
+collision_mask = 4
+
+[node name="LeftObjectBoundCollision" type="CollisionShape2D" parent="LeftObjectBound" unique_id=1246661328]
+position = Vector2(-16, 404.25)
+shape = SubResource("RectangleShape2D_57hjj")
+
+[node name="RightObjectBound" type="StaticBody2D" parent="." unique_id=277841986]
+collision_layer = 4
+collision_mask = 12
+
+[node name="RightObjectBoundCollision" type="CollisionShape2D" parent="RightObjectBound" unique_id=1441802756]
+position = Vector2(1936, 397.625)
+shape = SubResource("RectangleShape2D_57hjj")

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bjb7e4qv0xwoi"]
+
+[ext_resource type="Script" uid="uid://fyw3luhu63et" path="res://src/worlds/objects/physics_objects/character_box.gd" id="1_gb0p4"]
+[ext_resource type="Texture2D" uid="uid://dqjeeqo5mo3wq" path="res://src/assets/enviroments/objects/boxes/big/bix_box_new_screws.png" id="2_hm4d3"]
+[ext_resource type="Shader" uid="uid://cg8jmto1a4q1t" path="res://src/worlds/objects/physics_objects/pixelfy.gdshader" id="3_ovsac"]
+[ext_resource type="FontFile" uid="uid://cs6wcw8l1qk0n" path="res://src/assets/font/Micro_5,Tiny5/Tiny5/Tiny5-Regular.ttf" id="4_picgk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cy46g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy46g"]
+size = Vector2(128, 96)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hrpk"]
+shader = ExtResource("3_ovsac")
+shader_parameter/lower_definition_on = true
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="Gradient" id="Gradient_g6sxd"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.22745098, 0.14901961, 0.21960784, 1, 0.6745098, 0.5137255, 0.34509805, 1, 0.79607844, 0.61960787, 0.4392157, 1, 0.93333334, 0.78431374, 0.56078434, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hrpk"]
+gradient = SubResource("Gradient_g6sxd")
+width = 4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cy46g"]
+lifetime_randomness = 1.0
+particle_flag_rotate_y = true
+angle_min = -179.99998
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 42.129997
+initial_velocity_max = 246.59999
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -50.9
+radial_accel_max = -2.2351742e-06
+scale_min = 4.44
+scale_max = 35.36
+color = Color(0.93333334, 0.78431374, 0.56078434, 1)
+color_ramp = SubResource("GradientTexture1D_3hrpk")
+
+[node name="CharacterBox" type="RigidBody2D" unique_id=218875768]
+collision_layer = 5
+collision_mask = 15
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_cy46g")
+linear_damp = 3.0
+angular_damp = 10.0
+script = ExtResource("1_gb0p4")
+
+[node name="BoxTexture" type="Sprite2D" parent="." unique_id=175010291]
+position = Vector2(-1, -11)
+scale = Vector2(4, 4)
+texture = ExtResource("2_hm4d3")
+metadata/_edit_lock_ = true
+
+[node name="BoxCollision" type="CollisionShape2D" parent="." unique_id=1884400735]
+position = Vector2(-1, -11)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_cy46g")
+metadata/_edit_lock_ = true
+
+[node name="BoxVfx" type="GPUParticles2D" parent="." unique_id=112920372]
+material = SubResource("ShaderMaterial_3hrpk")
+emitting = false
+amount = 200
+lifetime = 0.6
+interp_to_end = 0.37
+explosiveness = 1.0
+randomness = 0.75
+process_material = SubResource("ParticleProcessMaterial_cy46g")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=962395488]
+offset_left = -129.0
+offset_top = -107.0
+offset_right = 127.0
+offset_bottom = 85.0
+theme_override_colors/default_color = Color(0.22745098, 0.14901961, 0.21960784, 1)
+theme_override_fonts/normal_font = ExtResource("4_picgk")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "CHANGE SKIN"
+horizontal_alignment = 1
+vertical_alignment = 1

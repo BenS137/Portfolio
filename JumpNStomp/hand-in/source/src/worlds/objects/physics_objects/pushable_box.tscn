@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bdh2xdricno1w"]
+
+[ext_resource type="Script" uid="uid://jvnb07yepbkc" path="res://src/worlds/objects/physics_objects/pushable_box.gd" id="1_g6sxd"]
+[ext_resource type="Texture2D" uid="uid://ba2ol3ghwv1qa" path="res://src/assets/enviroments/objects/boxes/small/boring box.png" id="2_3hrpk"]
+[ext_resource type="Shader" uid="uid://cg8jmto1a4q1t" path="res://src/worlds/objects/physics_objects/pixelfy.gdshader" id="3_3hrpk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_etm0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etm0o"]
+size = Vector2(36, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hrpk"]
+shader = ExtResource("3_3hrpk")
+shader_parameter/lower_definition_on = true
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="Gradient" id="Gradient_g6sxd"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.22745098, 0.14901961, 0.21960784, 1, 0.6745098, 0.5137255, 0.34509805, 1, 0.79607844, 0.61960787, 0.4392157, 1, 0.93333334, 0.78431374, 0.56078434, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hrpk"]
+gradient = SubResource("Gradient_g6sxd")
+width = 4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_etm0o"]
+lifetime_randomness = 1.0
+angle_min = -179.99998
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 169.28
+initial_velocity_max = 169.28
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -50.9
+radial_accel_max = -2.2351742e-06
+scale_min = 4.44
+scale_max = 35.36
+color = Color(0.93333334, 0.78431374, 0.56078434, 1)
+color_ramp = SubResource("GradientTexture1D_3hrpk")
+
+[node name="WoodenPushableBox" type="RigidBody2D" unique_id=1610356905]
+collision_layer = 5
+collision_mask = 15
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_etm0o")
+linear_damp = 3.0
+angular_damp = 10.0
+script = ExtResource("1_g6sxd")
+
+[node name="BoxTexture" type="Sprite2D" parent="." unique_id=91849073]
+position = Vector2(-1, -11)
+scale = Vector2(4, 4)
+texture = ExtResource("2_3hrpk")
+metadata/_edit_lock_ = true
+
+[node name="BoxCollision" type="CollisionShape2D" parent="." unique_id=1464984998]
+position = Vector2(-1, 23)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_etm0o")
+metadata/_edit_lock_ = true
+
+[node name="BoxVfx" type="GPUParticles2D" parent="." unique_id=1521433728]
+material = SubResource("ShaderMaterial_3hrpk")
+emitting = false
+amount = 200
+lifetime = 0.4
+interp_to_end = 0.232
+one_shot = true
+explosiveness = 1.0
+randomness = 0.75
+process_material = SubResource("ParticleProcessMaterial_etm0o")
+metadata/_edit_lock_ = true
