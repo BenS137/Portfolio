@@ -5,7 +5,7 @@
 Eine webbasierte Umsetzung einer Mediathek-Oberfläche der Hochschule der Medien.
 Projekte werden dynamisch über eine REST-API geladen und auf verschiedenen Seiten dargestellt.
 
-![HdM-Mediathek](screenshot.png)
+![HdM-Mediathek](Screenshot.png)
 
 ## Funktionen
 
