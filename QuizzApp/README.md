@@ -4,7 +4,9 @@
 
 Eine interaktive Quiz-Anwendung mit grafischer Benutzeroberfläche. Die Anwendung stellt zufällig ausgewählte Fragen, verfolgt den Punktestand und bietet verschiedene Ansichten für Start, Quiz, Ergebnis und Bestenliste.
 
-![Quiz-App](screenshot_quizz.png) ![Quiz-App](screenshot_end.png)
+<img src="screenshot_quizz.png" width="400">
+<img src="screenshot_end.png" width="400">
+
 
 ## Funktionen
 
