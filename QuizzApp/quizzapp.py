@@ -25,7 +25,7 @@ QPushButton {
 DEFAULT_STYLE = """
 QPushButton {
     background-color: none;
-    color: black;
+    color: white;
 }
 """
 #Mögliche Fragen-Dateien
